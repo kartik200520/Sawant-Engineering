@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sawant Engineering Works | precision fabrication & automation</title>
+  <!-- Bootstrap 5 + Icons + Fonts + AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========== ORIGINAL STYLES (preserved) ========== */
+    *{margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
+      color: #fff;
+    }
+    h1, h2, h3, h4, h5, .nav-link {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .navbar {
+      background: rgba(10, 10, 20, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+      padding: 12px 0;
+    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffd966, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .navbar-nav .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      margin: 0 8px;
+      padding: 8px 0 !important;
+      position: relative;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      transition: 0.2s;
+    }
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #f9d423, #fdaa33);
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+    .navbar-nav .nav-link:hover::before,
+    .navbar-nav .nav-link.active::before {
+      width: 100%;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffd966 !important;
+      transform: translateY(-2px);
+    }
+    section {
+      position: relative;
+      padding: 100px 0;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 1;
+      backdrop-filter: blur(2px);
+    }
+    .section-content {
+      position: relative;
+      z-index: 5;
+    }
+    /* Background images (you can replace these URLs) */
+    #home { background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+    #about { background-image: url('https://images.unsplash.com/photo-1565073189153-57d7c62aa78c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+    #services { background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+    #client { background-image: url('https://images.unsplash.com/photo-1565008447742-97f6b38c985c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+    #gallery { background-image: url('https://images.unsplash.com/photo-1581092335967-4c9cd5b4f2c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+    #contact { background-image: url('https://images.unsplash.com/photo-1581092454275-7c6a3a0b6b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+
+    /* Cards and common elements */
+    .stat-item {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,215,0,0.3);
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #fff;
+      box-shadow: 0 10px 25px -10px rgba(0,0,0,0.5);
+      transition: 0.3s;
+    }
+    .stat-item:hover {
+      background: rgba(255, 215, 0, 0.2);
+      border-color: #ffc107;
+      transform: scale(1.02);
+    }
+    .service-card, .client-card, .gallery-item, .team-card, .testimonial-card, .facility-card, .process-card {
+      background: rgba(20, 20, 30, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-radius: 24px;
+      padding: 30px 20px;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+      color: white;
+      text-align: center;
+      box-shadow: 0 20px 30px -15px black;
+      height: 100%;
+    }
+    .service-card:hover, .client-card:hover, .team-card:hover, .testimonial-card:hover, .facility-card:hover, .process-card:hover {
+      transform: translateY(-16px) scale(1.02);
+      background: rgba(40, 40, 60, 0.8);
+      border-color: #ffc107;
+      box-shadow: 0 30px 40px -10px #000;
+    }
+    .gallery-item {
+      padding: 10px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid rgba(255,215,0,0.3);
+      transition: 0.4s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.03);
+      border-color: #ffc107;
+    }
+    .mentor-card {
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      border-left: 8px solid #ffc107;
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+    .form-control, .form-select {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,215,0,0.3);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      padding: 14px;
+      border-radius: 14px;
+    }
+    .form-control:focus, .form-select:focus {
+      background: rgba(255,255,255,0.2);
+      border-color: #ffc107;
+      box-shadow: 0 0 15px #ffc10750;
+      color: #fff;
+    }
+    .form-control::placeholder {
+      color: rgba(255,255,240,0.7);
+      font-weight: 300;
+    }
+    .input-group-text {
+      background: rgba(255,215,0,0.2);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: #ffc107;
+      border-radius: 14px 0 0 14px;
+    }
+    .btn-glow {
+      background: linear-gradient(145deg, #f0b202, #ff9900);
+      border: none;
+      color: #111;
+      font-weight: 700;
+      padding: 12px 40px;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px -8px #f90;
+      transition: 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .btn-glow:hover {
+      background: linear-gradient(145deg, #ffc107, #ff7b00);
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px -5px #ffae00;
+      color: #000;
+    }
+    /* Page simulation */
+    .page {
+      display: none;
+      min-height: 100vh;
+    }
+    .page.active {
+      display: block;
+    }
+    /* Map container */
+    .map-container {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid rgba(255,215,0,0.3);
+    }
+    /* Counter animation */
+    .counter {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ffc107;
+    }
+    /* Timeline */
+    .timeline-item {
+      padding-left: 30px;
+      border-left: 3px solid #ffc107;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #ffc107;
+    }
+    /* FAQ accordion */
+    .accordion-item {
+      background: rgba(20,20,30,0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,215,0,0.3);
+      margin-bottom: 15px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .accordion-button {
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+    }
+    .accordion-button:not(.collapsed) {
+      background: rgba(255,215,0,0.2);
+      color: #ffc107;
+    }
+    .accordion-button::after {
+      filter: invert(1);
+    }
+    .accordion-body {
+      color: #ddd;
+    }
+    /* Big footer */
+    .big-footer {
+      background: #0a0a15;
+      border-top: 1px solid #ffc10720;
+      padding: 60px 0 30px;
+      color: #ccc;
+    }
+    .footer-title {
+      color: #ffc107;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #ffc107;
+    }
+    .footer-link {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .footer-link:hover {
+      color: #ffc107;
+      transform: translateX(5px);
+    }
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,215,0,0.1);
+      border-radius: 50%;
+      color: #ffc107;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+    .social-icon:hover {
+      background: #ffc107;
+      color: #111;
+      transform: translateY(-3px);
+    }
+    .newsletter-input {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: #fff;
+      padding: 12px;
+      border-radius: 30px 0 0 30px;
+    }
+    .newsletter-btn {
+      background: #ffc107;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 0 30px 30px 0;
+      font-weight: 600;
+    }
+    .copyright {
+      border-top: 1px solid rgba(255,215,0,0.2);
+      padding-top: 30px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      section { padding: 70px 0; background-attachment: scroll; }
+      .navbar-brand { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home"><i class="fas fa-industry me-2" style="color:#ffc107;"></i>Sawant<span style="font-weight:300; color:#ffd966;">Engineering</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#client">CLIENTS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HOME PAGE ========== -->
+<section id="home" class="page active">
+  <div class="overlay"></div>
+  <div class="container section-content">
+    <div class="row min-vh-100 align-items-center">
+      <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+        <h1 class="display-2 fw-bolder" style="text-shadow:0 5px 20px #000;">Sawant Engineering Works</h1>
+        <p class="lead fs-3 mb-4" style="color:#ffd966;">Precision Fabrication & Automation Experts</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+          <span class="stat-item"><i class="fas fa-badge-check me-2 text-warning"></i>ISO 9001:2015</span>
+          <span class="stat-item"><i class="fas fa-crown me-2 text-warning"></i>25+ Years Experience</span>
+          <span class="stat-item"><i class="fas fa-handshake me-2 text-warning"></i>500+ Projects</span>
+        </div>
+        <p class="fs-5 col-lg-10 mx-auto mb-5">We specialize in jig fixtures, welding fixtures, stainless steel fabrication, and turnkey automation solutions. Our team of certified engineers delivers zero-defect quality every time.</p>
+
+        <!-- Stats Counters -->
+        <div class="row mt-5 g-4">
+          <div class="col-md-3 col-6" data-aos="zoom-in">
+            <div class="stat-item py-4">
+              <div class="counter" data-target="25">0</div>
+              <p>Years of Excellence</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-item py-4">
+              <div class="counter" data-target="550">0</div>
+              <p>Projects Delivered</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-item py-4">
+              <div class="counter" data-target="80">0</div>
+              <p>Happy Clients</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-item py-4">
+              <div class="counter" data-target="15">0</div>
+              <p>Certifications</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="row mt-5 g-4">
+          <h3 class="text-center mb-4" data-aos="fade-up">Why Choose Sawant Engineering?</h3>
+          <div class="col-md-3 col-6" data-aos="flip-left">
+            <div class="service-card py-3">
+              <i class="fas fa-microscope fa-3x text-warning mb-2"></i>
+              <h6>In-house Quality Lab</h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="flip-left" data-aos-delay="100">
+            <div class="service-card py-3">
+              <i class="fas fa-clock fa-3x text-warning mb-2"></i>
+              <h6>100% On-Time Delivery</h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="flip-left" data-aos-delay="200">
+            <div class="service-card py-3">
+              <i class="fas fa-cogs fa-3x text-warning mb-2"></i>
+              <h6>Advanced CNC Facility</h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="flip-left" data-aos-delay="300">
+            <div class="service-card py-3">
+              <i class="fas fa-headset fa-3x text-warning mb-2"></i>
+              <h6>24/7 Customer Support</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video CTA -->
+        <div class="mt-5" data-aos="fade-up">
+          <a href="#" class="btn btn-outline-warning btn-lg rounded-pill px-5 me-3" data-bs-toggle="modal" data-bs-target="#videoModal">
+            <i class="fas fa-play me-2"></i> Watch Company Video
+          </a>
+          <a href="#about" class="btn btn-glow btn-lg">EXPLORE <i class="fas fa-arrow-down ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-warning">
+        <h5 class="modal-title">Sawant Engineering – Our Journey</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ABOUT PAGE ========== -->
+<section id="about" class="page">
+  <div class="overlay"></div>
+  <div class="container section-content">
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 class="display-5 mb-4"><span class="border-bottom border-warning pb-2">About Us</span></h2>
+        <p class="fs-5">Sawant Engineering Works was founded in 1998 by Raghunath Tukaram Sawant with a vision to deliver world-class precision engineering solutions. Today, we are a trusted partner for industries across Maharashtra, specializing in structural fabrication, sheet metal work, maintenance, jig fixture design, SPM, and automation.</p>
+        <p class="fs-5 mt-3">Our state-of-the-art facility in Satara spans 15,000 sq. ft. and houses CNC turning centers, VMC machines, welding robots, and a fully equipped quality lab.</p>
+        
+        <!-- Certifications -->
+        <div class="mt-4 d-flex gap-3 flex-wrap">
+          <span class="badge bg-warning text-dark p-3"><i class="fas fa-certificate me-2"></i>ISO 9001:2015</span>
+          <span class="badge bg-warning text-dark p-3"><i class="fas fa-trophy me-2"></i>MSME Certified</span>
+          <span class="badge bg-warning text-dark p-3"><i class="fas fa-shield-alt me-2"></i>Make in India</span>
+          <span class="badge bg-warning text-dark p-3"><i class="fas fa-award me-2"></i>Best Employer 2022</span>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="bg-dark bg-opacity-50 p-4 rounded-4 border border-warning border-opacity-25">
+          <h3 class="text-warning"><i class="fas fa-eye me-2"></i>Vision</h3>
+          <p class="mb-4">To be the most preferred engineering partner in Western India, known for innovation, quality, and integrity.</p>
+          <h3 class="text-warning"><i class="fas fa-rocket me-2"></i>Mission</h3>
+          <p>To consistently exceed customer expectations through continuous improvement, employee empowerment, and sustainable practices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Company History Timeline -->
+    <div class="row mt-5">
+      <h3 class="text-center mb-4" data-aos="fade-up">Our Journey</h3>
+      <div class="col-md-6 offset-md-3">
+        <div class="timeline-item" data-aos="fade-right">
+          <h5 class="text-warning">1998</h5>
+          <p>Founded as a small fabrication unit in Satara with 5 employees.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <h5 class="text-warning">2005</h5>
+          <p>Expanded into CNC machining and jig fixture design.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <h5 class="text-warning">2012</h5>
+          <p>ISO 9001 certification and new facility inauguration.</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+          <h5 class="text-warning">2018</h5>
+          <p>Launched automation division (SPM, robotics).</p>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+          <h5 class="text-warning">2024</h5>
+          <p>Recognized as one of the top 10 engineering firms in Pune region.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrastructure / Facilities -->
+    <div class="row mt-5 g-4">
+      <h3 class="text-center mb-4" data-aos="fade-up">Our Facilities</h3>
+      <div class="col-md-3 col-6" data-aos="zoom-in">
+        <div class="facility-card p-3">
+          <i class="fas fa-cog fa-3x text-warning mb-2"></i>
+          <h6>CNC Turning (10 units)</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="facility-card p-3">
+          <i class="fas fa-robot fa-3x text-warning mb-2"></i>
+          <h6>Robotic Welding Cells</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="facility-card p-3">
+          <i class="fas fa-flask fa-3x text-warning mb-2"></i>
+          <h6>Quality Lab (CMM, Hardness)</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="facility-card p-3">
+          <i class="fas fa-pencil-ruler fa-3x text-warning mb-2"></i>
+          <h6>Design Office (CAD/CAM)</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Members -->
+    <div class="row mt-5 g-4">
+      <h3 class="text-center mb-4" data-aos="fade-up">Leadership Team</h3>
+      <div class="col-md-2 col-6" data-aos="flip-left">
+        <div class="team-card p-3">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-2" width="80" height="80" alt="Raghunath Sawant">
+          <h6>Raghunath Sawant</h6>
+          <p class="small text-warning">Founder</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-6" data-aos="flip-left" data-aos-delay="50">
+        <div class="team-card p-3">
+          <img src="https://randomuser.me/api/portraits/men/44.jpg" class="rounded-circle mb-2" width="80" height="80" alt="Amit Sawant">
+          <h6>Amit Sawant</h6>
+          <p class="small text-warning">MD</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-6" data-aos="flip-left" data-aos-delay="100">
+        <div class="team-card p-3">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle mb-2" width="80" height="80" alt="Priya Sawant">
+          <h6>Priya Sawant</h6>
+          <p class="small text-warning">Quality Head</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-6" data-aos="flip-left" data-aos-delay="150">
+        <div class="team-card p-3">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" class="rounded-circle mb-2" width="80" height="80" alt="Vikram Patil">
+          <h6>Vikram Patil</h6>
+          <p class="small text-warning">Production Mgr</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-6" data-aos="flip-left" data-aos-delay="200">
+        <div class="team-card p-3">
+          <img src="https://randomuser.me/api/portraits/women/50.jpg" class="rounded-circle mb-2" width="80" height="80" alt="Neha Deshmukh">
+          <h6>Neha Deshmukh</h6>
+          <p class="small text-warning">Design Lead</p>
+        </div>
+      </div>
+      <div class="col-md-2 col-6" data-aos="flip-left" data-aos-delay="250">
+        <div class="team-card p-3">
+          <img src="https://randomuser.me/api/portraits/men/62.jpg" class="rounded-circle mb-2" width="80" height="80" alt="Suresh Kulkarni">
+          <h6>Suresh Kulkarni</h6>
+          <p class="small text-warning">Automation Head</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mentor Card -->
+    <div class="row mt-5" data-aos="zoom-in">
+      <div class="col-12">
+        <div class="mentor-card">
+          <h3><i class="fas fa-user-tie text-warning me-3"></i>Founder's Message</h3>
+          <h4 class="fw-bold text-warning">Raghunath Tukaram Sawant</h4>
+          <p class="fst-italic fs-5">"Our journey from a small workshop to a trusted engineering partner has been driven by our commitment to quality, innovation, and strong customer relationships. We don't just build components; we build trust."</p>
+          <div class="mt-3">
+            <span class="me-3"><i class="fas fa-award text-warning"></i> Lifetime Achievement Award 2022</span>
+            <span><i class="fas fa-users text-warning"></i> Mentor to 200+ engineers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES PAGE ========== -->
+<section id="services" class="page">
+  <div class="overlay"></div>
+  <div class="container section-content">
+    <h2 class="text-center display-5 mb-5" data-aos="fade-down"><span class="border-bottom border-warning pb-2">What We Do?</span></h2>
+    <div class="row g-4">
+      <!-- Service 1 -->
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="service-card text-start">
+          <i class="fas fa-drafting-compass fa-4x text-warning mb-3"></i>
+          <h4>Structural Fabrication</h4>
+          <p class="small mt-2">Heavy steel structures, bridges, industrial sheds, platforms.</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Beams, columns, trusses</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Staircases, railings</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Custom structures</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+        <div class="service-card text-start">
+          <i class="fas fa-cut fa-4x text-warning mb-3"></i>
+          <h4>Sheet Metal Fabrication</h4>
+          <p class="small mt-2">Precision cutting, bending, welding of thin sheets (SS, MS, Aluminum).</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Laser cutting</li>
+            <li><i class="fas fa-check text-warning me-2"></i>CNC bending</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Enclosures, cabinets</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="150">
+        <div class="service-card text-start">
+          <i class="fas fa-tools fa-4x text-warning mb-3"></i>
+          <h4>Maintenance Services</h4>
+          <p class="small mt-2">Foundry press, machine shop equipment, preventive & breakdown maintenance.</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Hydraulic presses</li>
+            <li><i class="fas fa-check text-warning me-2"></i>CNC machines</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Conveyors, material handling</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+      <!-- Service 4 -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="service-card text-start">
+          <i class="fas fa-wrench fa-4x text-warning mb-3"></i>
+          <h4>Jig Fixture Design & Manufacturing</h4>
+          <p class="small mt-2">Custom fixtures for machining, welding, assembly, and inspection.</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Drilling jigs</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Welding fixtures</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Inspection gauges</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+      <!-- Service 5 -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="250">
+        <div class="service-card text-start">
+          <i class="fas fa-robot fa-4x text-warning mb-3"></i>
+          <h4>SPM Manufacturing</h4>
+          <p class="small mt-2">Special Purpose Machines for automation, assembly, testing.</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Assembly lines</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Pick & place units</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Custom automation</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+      <!-- Service 6 -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+        <div class="service-card text-start">
+          <i class="fas fa-pipe-valve fa-4x text-warning mb-3"></i>
+          <h4>Piping</h4>
+          <p class="small mt-2">Industrial piping systems, fabrication & installation for water, oil, gas.</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Carbon steel, SS piping</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Flanges, fittings</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Pressure testing</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+      <!-- Service 7 (centered) -->
+      <div class="col-md-4 offset-md-4" data-aos="flip-left" data-aos-delay="350">
+        <div class="service-card text-start">
+          <i class="fas fa-microchip fa-4x text-warning mb-3"></i>
+          <h4>Automation</h4>
+          <p class="small mt-2">PLC, SCADA, robotics, and control systems integration.</p>
+          <ul class="small list-unstyled">
+            <li><i class="fas fa-check text-warning me-2"></i>Control panel design</li>
+            <li><i class="fas fa-check text-warning me-2"></i>Robotic programming</li>
+            <li><i class="fas fa-check text-warning me-2"></i>IoT solutions</li>
+          </ul>
+          <a href="#" class="btn btn-sm btn-outline-warning mt-2">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- How We Work Process -->
+    <div class="row mt-5">
+      <h3 class="text-center mb-4" data-aos="fade-up">Our Process</h3>
+      <div class="col-md-3" data-aos="fade-right">
+        <div class="process-card">
+          <span class="badge bg-warning text-dark mb-2">Step 1</span>
+          <i class="fas fa-comments fa-3x text-warning mb-2"></i>
+          <h5>Consultation</h5>
+          <p class="small">Understand requirements, feasibility study</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="100">
+        <div class="process-card">
+          <span class="badge bg-warning text-dark mb-2">Step 2</span>
+          <i class="fas fa-draw-polygon fa-3x text-warning mb-2"></i>
+          <h5>Design & Engineering</h5>
+          <p class="small">CAD modeling, simulations, material selection</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="200">
+        <div class="process-card">
+          <span class="badge bg-warning text-dark mb-2">Step 3</span>
+          <i class="fas fa-industry fa-3x text-warning mb-2"></i>
+          <h5>Fabrication</h5>
+          <p class="small">Precision machining, welding, assembly</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="300">
+        <div class="process-card">
+          <span class="badge bg-warning text-dark mb-2">Step 4</span>
+          <i class="fas fa-check-double fa-3x text-warning mb-2"></i>
+          <h5>Quality & Delivery</h5>
+          <p class="small">Inspection, testing, on-time dispatch</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CLIENTS PAGE ========== -->
+<section id="client" class="page">
+  <div class="overlay"></div>
+  <div class="container section-content">
+    <h2 class="text-center display-5 mb-5" data-aos="fade-down"><span class="border-bottom border-warning pb-2">Our Clients & Partners</span></h2>
+    
+    <!-- Client Logos (as cards) -->
+    <div class="row g-4 justify-content-center mb-5">
+      <div class="col-6 col-md-3" data-aos="zoom-in"><div class="client-card p-4"><i class="fas fa-industry fa-3x text-warning"></i><h5 class="mt-2">Tata Motors</h5><p class="small">Strategic Partner since 2010</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="50"><div class="client-card p-4"><i class="fas fa-oil-well fa-3x text-warning"></i><h5 class="mt-2">BPCL</h5><p class="small">Pipeline Fabrication</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><div class="client-card p-4"><i class="fas fa-truck fa-3x text-warning"></i><h5 class="mt-2">Mahindra</h5><p class="small">Jigs & Fixtures</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="150"><div class="client-card p-4"><i class="fas fa-hard-hat fa-3x text-warning"></i><h5 class="mt-2">L&T</h5><p class="small">Structural Work</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200"><div class="client-card p-4"><i class="fas fa-robot fa-3x text-warning"></i><h5 class="mt-2">ABB</h5><p class="small">Automation</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="250"><div class="client-card p-4"><i class="fas fa-cogs fa-3x text-warning"></i><h5 class="mt-2">Siemens</h5><p class="small">Control Panels</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300"><div class="client-card p-4"><i class="fas fa-tractor fa-3x text-warning"></i><h5 class="mt-2">John Deere</h5><p class="small">Components</p></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="350"><div class="client-card p-4"><i class="fas fa-ship fa-3x text-warning"></i><h5 class="mt-2">Mazagon Dock</h5><p class="small">Shipbuilding Parts</p></div></div>
+    </div>
+
+    <!-- Testimonials Carousel -->
+    <h3 class="text-center mb-4" data-aos="fade-up">Client Testimonials</h3>
+    <div id="testimonialCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-aos="fade-up">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-card mx-auto" style="max-width: 700px;">
+            <i class="fas fa-quote-left fa-3x text-warning opacity-50 mb-3"></i>
+            <p class="fs-5">"Sawant Engineering has been our go-to partner for critical jigs and fixtures. Their precision and on-time delivery are exceptional."</p>
+            <h5 class="text-warning mt-3">- Ramesh Iyer, Tata Motors</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" style="max-width: 700px;">
+            <i class="fas fa-quote-left fa-3x text-warning opacity-50 mb-3"></i>
+            <p class="fs-5">"We awarded them a complex structural fabrication project, and they exceeded our expectations. Highly professional team."</p>
+            <h5 class="text-warning mt-3">- Sunil Patil, L&T</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" style="max-width: 700px;">
+            <i class="fas fa-quote-left fa-3x text-warning opacity-50 mb-3"></i>
+            <p class="fs-5">"Their automation solutions helped us reduce cycle time by 40%. Great innovation and support."</p>
+            <h5 class="text-warning mt-3">- Anjali Desai, ABB</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" style="max-width: 700px;">
+            <i class="fas fa-quote-left fa-3x text-warning opacity-50 mb-3"></i>
+            <p class="fs-5">"The team at Sawant Engineering is responsive, skilled, and always delivers quality. A trusted partner for years."</p>
+            <h5 class="text-warning mt-3">- Vikram Singh, Mahindra</h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Partners -->
+    <h3 class="text-center mb-4" data-aos="fade-up">Our Technology Partners</h3>
+    <div class="row g-4 justify-content-center">
+      <div class="col-4 col-md-2"><img src="https://t4.ftcdn.net/jpg/03/26/96/81/360_F_326968170_8mbkpP9x0qGZJ6HJS1xifjeZn72NgGNe.jpg" class="img-fluid client-logo" alt="Siemens"></div>
+      <div class="col-4 col-md-2"><img src="https://img.manufacturing.net/files/base/indm/multi/image/2022/07/FANUC_Mexico_New_Headquarters.62d0234f9fd88.png?auto=format%2Ccompress&fit=max&q=70&rect=0%2C39%2C1920%2C1080&w=1200" class="img-fluid client-logo" alt="FANUC"></div>
+      <div class="col-4 col-md-2"><img src="https://freshershunt.in/wp-content/uploads/2023/09/Autodesk.jpeg" class="img-fluid client-logo" alt="Autodesk"></div>
+      <div class="col-4 col-md-2"><img src="https://www.haasthailand.com/en/images/about/bg-banner-company.png" class="img-fluid client-logo" alt="HAAS"></div>
+      <div class="col-4 col-md-2"><img src="https://logodix.com/logo/437470.jpg" class="img-fluid client-logo" alt="Allen Bradley"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY PAGE ========== -->
+<section id="gallery" class="page">
+  <div class="overlay"></div>
+  <div class="container section-content">
+    <h2 class="text-center display-5 mb-5" data-aos="fade-down"><span class="border-bottom border-warning pb-2">Gallery</span></h2>
+    <!-- Category filter (static) -->
+    <ul class="nav justify-content-center mb-4 gap-2" data-aos="fade-up">
+      <li class="nav-item"><a href="#" class="btn btn-sm btn-outline-warning active">All</a></li>
+      <li class="nav-item"><a href="#" class="btn btn-sm btn-outline-warning">Fabrication</a></li>
+      <li class="nav-item"><a href="#" class="btn btn-sm btn-outline-warning">Machining</a></li>
+      <li class="nav-item"><a href="#" class="btn btn-sm btn-outline-warning">Team</a></li>
+      <li class="nav-item"><a href="#" class="btn btn-sm btn-outline-warning">Products</a></li>
+    </ul>
+    <div class="row g-4">
+      <!-- 12 images with lightbox -->
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://cdn.thefabricator.com/a/modern-material-handling-in-the-structural-fab-shop-1605202083.JPG">
+          <img src="https://cdn.thefabricator.com/a/modern-material-handling-in-the-structural-fab-shop-1605202083.JPG" alt="fabrication shop">
+          <p class="mt-2 small">Heavy fabrication shop</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/101/800/600">
+          <img src="https://www.rapiddirect.com/wp-content/uploads/2024/01/cnc-lathe-vs-cnc-turning-center.webp" alt="cnc turning">
+          <p class="mt-2 small">CNC turning center</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/102/800/600">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/302532386/FH/IP/GN/3688214/custom-welding-fixture.jpg" alt="welding fixture">
+          <p class="mt-2 small">Custom welding fixture</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="240">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/103/800/600">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaIyPyJkUmu5cmjCsefZ706HrZdw5L0SUahA&s" alt="structural work">
+          <p class="mt-2 small">Structural steel project</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="320">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/104/800/600">
+          <img src="https://mlfucsycpphi.i.optimole.com/cb:7BSZ.103ff/w:1920/h:1080/q:85/f:best/https://www.gavsistemi.com/wp-content/uploads/2025/04/robotic-cells.webp" alt="automation cell">
+          <p class="mt-2 small">Robotic automation cell</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/106/800/600">
+          <img src="https://image.made-in-china.com/202f0j00CvLbfAjanToM/Precision-Jig-Fixture-Solutions-for-Industrial-Automation.webp" alt="jig fixture">
+          <p class="mt-2 small">Precision jig</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/107/800/600">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/320995489/BI/ZA/IZ/157679030/cmm-inspection-services.jpg" alt="quality inspection">
+          <p class="mt-2 small">CMM inspection</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/108/800/600">
+          <img src="https://img.freepik.com/free-photo/young-manual-worker-presenting-new-business-strategy-company-managers-his-colleagues-factory_637285-4142.jpg?semt=ais_user_personalization&w=740&q=80" alt="team work">
+          <p class="mt-2 small">Our engineering team</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="240">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/109/800/600">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiA7lbF9lDNmevFcpAqGmF99LNFXmsOKUNCg&s" alt="finished product">
+          <p class="mt-2 small">Finished assembly</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="320">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/110/800/600">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeaeYDfACRXiOY8PqPF7QJ4XF-dIkfXpg53w&s" alt="warehouse">
+          <p class="mt-2 small">Warehouse & dispatch</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/111/800/600">
+          <img src="https://www.hubspot.com/hubfs/Customer%20Visit.jpg" alt="client visit">
+          <p class="mt-2 small">Client visit</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="480">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="https://picsum.photos/id/112/800/600">
+          <img src="https://i.pinimg.com/736x/9f/81/8f/9f818fc8603c32eb0bf375958aafeb9a.jpg" alt="award ceremony">
+          <p class="mt-2 small">Award ceremony 2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image Modal for Gallery -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-warning">
+        <h5 class="modal-title text-white">Gallery Image</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" id="modalImage" class="img-fluid rounded" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONTACT PAGE ========== -->
+<section id="contact" class="page">
+  <div class="overlay"></div>
+  <div class="container section-content">
+    <h2 class="text-center display-5 mb-5" data-aos="fade-down"><span class="border-bottom border-warning pb-2">Contact Us</span></h2>
+    <div class="row g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <p class="fs-3 fw-semibold"><i class="fas fa-heart text-warning me-2"></i>We'd love to hear from you!</p>
+        <div class="d-flex mb-4"><i class="fas fa-map-pin text-warning fa-2x me-3"></i><span>Plot No.25, Ashirwad Colony, Degaon Road, Sambhajinagar, Kodoli, Satara, Maharashtra - 415004</span></div>
+        <div class="d-flex mb-4"><i class="fas fa-envelope text-warning fa-2x me-3"></i><span>sawantenggworks@gmail.com  |  projects@sawantengg.com</span></div>
+        <div class="d-flex mb-4"><i class="fas fa-phone-alt text-warning fa-2x me-3"></i><span>+91 97 66 55 20 64  |  +91 21 62 123456</span></div>
+        <div class="border-top border-warning pt-3 mt-3">
+          <p><i class="fas fa-clock me-2 text-warning"></i> Mon-Sat: 9:00 – 19:00</p>
+        </div>
+
+        <!-- Google Map -->
+        <div class="map-container mt-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.265517856675!2d73.8562553148938!3d18.52440508741337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0f3c0f3c0f3%3A0x3c0f3c0f3c0f3c0f!2sSawant%20Engineering%20Works!5e0!3m2!1sen!2sin!4v1645678901234!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-5">
+          <h4 class="text-warning mb-3">Frequently Asked Questions</h4>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  What industries do you serve?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Automotive, heavy engineering, oil & gas, aerospace, and general manufacturing.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Do you provide on-site installation?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yes, we offer complete installation and commissioning services for all our products.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What is your typical turnaround time?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">It depends on the project complexity, but most jobs are completed within 2-6 weeks.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left">
+        <form>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-building"></i></span>
+                <input type="text" class="form-control" placeholder="Company Name" required>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+            </div>
+            <div class="col-12 mb-4">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                <input type="text" class="form-control" placeholder="Address (optional)">
+              </div>
+            </div>
+            <div class="col-12 mb-4">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                <select class="form-select" required>
+                  <option selected disabled value="">Select Subject</option>
+                  <option>General Inquiry</option>
+                  <option>Request for Quote</option>
+                  <option>Technical Support</option>
+                  <option>Career</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 mb-4">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="col-12 mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                <label class="form-check-label" for="newsletterCheck">Subscribe to our newsletter</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-glow px-5 py-3 w-100">
+                <i class="fas fa-paper-plane me-2"></i> SEND MESSAGE
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BIG FOOTER ========== -->
+<footer class="big-footer">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1: About -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-title">Sawant Engineering</h5>
+        <p class="small">Precision fabrication & automation since 1998. ISO 9001 certified, trusted by industry leaders for quality and innovation.</p>
+        <div class="mt-3">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <!-- Column 2: Quick Links -->
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About Us</a></li>
+          <li><a href="#services" class="footer-link">Services</a></li>
+          <li><a href="#client" class="footer-link">Clients</a></li>
+          <li><a href="#gallery" class="footer-link">Gallery</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Column 3: Services -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-title">Our Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Structural Fabrication</a></li>
+          <li><a href="#" class="footer-link">Sheet Metal Fabrication</a></li>
+          <li><a href="#" class="footer-link">Maintenance Services</a></li>
+          <li><a href="#" class="footer-link">Jig Fixture Design</a></li>
+          <li><a href="#" class="footer-link">SPM Manufacturing</a></li>
+          <li><a href="#" class="footer-link">Automation Solutions</a></li>
+        </ul>
+      </div>
+      <!-- Column 4: Newsletter & Contact -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h5 class="footer-title">Newsletter</h5>
+        <p class="small">Subscribe to get updates on our latest projects and offers.</p>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control newsletter-input" placeholder="Your Email">
+          <button class="btn newsletter-btn" type="button">Subscribe</button>
+        </div>
+        <h5 class="footer-title mt-4">Contact Info</h5>
+        <p class="small mb-1"><i class="fas fa-phone-alt text-warning me-2"></i> +91 97 66 55 20 64</p>
+        <p class="small mb-1"><i class="fas fa-envelope text-warning me-2"></i> info@sawantengg.com</p>
+        <p class="small"><i class="fas fa-map-marker-alt text-warning me-2"></i> Satara, Maharashtra</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p class="small mb-0">© 2017–2025 Sawant Engineering Works. All rights reserved. Designed by nmskaar Infotech.</p>
+      <p class="small mt-2"><a href="#" class="text-warning text-decoration-none">Privacy Policy</a> | <a href="#" class="text-warning text-decoration-none">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  (function() {
+    AOS.init({ duration: 800, once: true, offset: 40, easing: 'ease-in-out' });
+
+    // Page simulation
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    function showPage(pageId) {
+      pages.forEach(p => p.classList.remove('active'));
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+        navLinks.forEach(link => {
+          const hash = link.getAttribute('href').replace('#', '');
+          link.classList.toggle('active', hash === pageId);
+        });
+        setTimeout(() => AOS.refresh(), 100);
+      }
+    }
+
+    function loadPageFromHash() {
+      let hash = window.location.hash.substring(1);
+      if (!hash) hash = 'home';
+      showPage(hash);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('href').replace('#', '');
+        window.location.hash = id;
+        showPage(id);
+      });
+    });
+
+    window.addEventListener('popstate', loadPageFromHash);
+    window.addEventListener('load', loadPageFromHash);
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    const animateCounter = () => {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(animateCounter, 10);
+        } else {
+          counter.innerText = target;
+        }
+      });
+    };
+
+    // Trigger counters when home page becomes active
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.target.id === 'home' && mutation.target.classList.contains('active')) {
+          animateCounter();
+        }
+      });
+    });
+    observer.observe(document.getElementById('home'), { attributes: true, attributeFilter: ['class'] });
+
+    // Gallery modal
+    const imageModal = document.getElementById('imageModal');
+    if (imageModal) {
+      imageModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const imgSrc = button.getAttribute('data-bs-img');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imgSrc;
+      });
+    }
+  })();
+</script>
+</body>
+</html>
